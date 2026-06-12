@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto details | DLCR</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav id="navbar" class="scrolled">
+        <div class="container nav-container">
+            <a href="index.html" class="logo"><span class="text-gradient">DL</span>CR.</a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="inventory.html">Aanbod</a></li>
+                <li><a href="tuning.html">Tuning</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <p class="section-kicker">Auto details</p>
+            <h1 class="text-gradient" id="detailHeaderTitle">Car detail</h1>
+            <p id="detailHeaderSubtitle">Vraagprijs, aanbod, specs en vergelijkbare auto's op één pagina.</p>
+        </div>
+    </header>
+
+    <main class="detail-page">
+        <div class="container">
+            <div id="carDetailApp"></div>
+        </div>
+    </main>
+
+    <section class="similar-section">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-kicker">Vergelijkbaar aanbod</p>
+                <h2 class="section-title">Andere auto's die erbij passen</h2>
+                <p>De selectie hieronder wordt automatisch gerangschikt op basis van prijs, segment, vermogen en type.</p>
+            </div>
+            <div id="similarCars" class="similar-grid"></div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo"><span class="text-gradient">DL</span>CR.</a>
+                    <p style="margin-top: 1rem;">DLCR verbindt betaalbare instapauto's met high-end exotics, altijd met een cleane presentatie.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Snelle Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="inventory.html">Aanbod</a></li>
+                        <li><a href="admin.html">Admin Dashboard</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:info@dlcr.nl"><i class="fas fa-envelope"></i> info@dlcr.nl</a></li>
+                        <li><a href="tel:+31612345678"><i class="fas fa-phone"></i> +31 (0)6 1234 5678</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> Performance Highway 8, NL</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 DLCR. Alle rechten voorbehouden.
+            </div>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

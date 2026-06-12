@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | DLCR</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav id="navbar" class="scrolled">
+        <div class="container nav-container">
+            <a href="index.html" class="logo"><span class="text-gradient">DL</span>CR.</a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="inventory.html">Aanbod</a></li>
+                <li><a href="tuning.html">Tuning</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <p class="section-kicker">Admin</p>
+            <h1 class="text-gradient">Dashboard voor voorraadbeheer</h1>
+            <p>Voeg auto's toe, pas ze aan en beheer de live inventaris die op de site wordt getoond.</p>
+        </div>
+    </header>
+
+    <main class="admin-page">
+        <div class="container admin-grid">
+            <section class="admin-panel">
+                <div class="admin-panel-header">
+                    <div>
+                        <p class="section-kicker">Voorraadbeheer</p>
+                        <h2>Auto toevoegen of aanpassen</h2>
+                    </div>
+                    <p class="form-note">Nieuwe auto's worden opgeslagen via de MySQL-backend. Verander je later van toestel, dan blijft de voorraad gewoon behouden op de server.</p>
+                </div>
+                <div class="admin-summary" id="adminSummary">
+                    <div class="summary-card">
+                        <span>Totaal</span>
+                        <strong id="summaryTotal">0</strong>
+                    </div>
+                    <div class="summary-card">
+                        <span>Instap / performance</span>
+                        <strong id="summaryAccessible">0</strong>
+                    </div>
+                    <div class="summary-card">
+                        <span>Exotics</span>
+                        <strong id="summaryExotic">0</strong>
+                    </div>
+                </div>
+
+                <form id="carForm" class="admin-form">
+                    <input type="hidden" id="carId">
+                    <section class="admin-form-section full-width">
+                        <h3>Basisgegevens</h3>
+                        <div class="admin-form-grid">
+                            <div>
+                                <label for="title">Titel</label>
+                                <input type="text" id="title" placeholder="Ford Focus ST" required>
+                            </div>
+                            <div>
+                                <label for="make">Merk</label>
+                                <input type="text" id="make" placeholder="Ford" required>
+                            </div>
+                            <div>
+                                <label for="category">Categorie</label>
+                                <select id="category" required>
+                                    <option value="young">Young driver</option>
+                                    <option value="performance">Performance</option>
+                                    <option value="premium">Premium</option>
+                                    <option value="exotic">Exotic</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="bodyType">Carrosserie</label>
+                                <input type="text" id="bodyType" placeholder="Hot hatch / Coupe / Supercar" required>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="admin-form-section full-width">
+                        <h3>Prijs & specs</h3>
+                        <div class="admin-form-grid">
+                            <div>
+                                <label for="price">Vraagprijs</label>
+                                <input type="number" id="price" min="0" step="1" placeholder="19950" required>
+                            </div>
+                            <div>
+                                <label for="priceDisplay">Prijslabel</label>
+                                <input type="text" id="priceDisplay" placeholder="€ 19.950 / Op aanvraag">
+                            </div>
+                            <div>
+                                <label for="year">Bouwjaar</label>
+                                <input type="number" id="year" min="1950" max="2100" placeholder="2019" required>
+                            </div>
+                            <div>
+                                <label for="mileage">Kilometerstand</label>
+                                <input type="number" id="mileage" min="0" step="1" placeholder="82000" required>
+                            </div>
+                            <div>
+                                <label for="mileageDisplay">Kilometerlabel</label>
+                                <input type="text" id="mileageDisplay" placeholder="82.000 km">
+                            </div>
+                            <div>
+                                <label for="power">Vermogen (PK)</label>
+                                <input type="number" id="power" min="0" step="1" placeholder="280" required>
+                            </div>
+                            <div>
+                                <label for="powerDisplay">Vermogenslabel</label>
+                                <input type="text" id="powerDisplay" placeholder="280 PK">
+                            </div>
+                            <div>
+                                <label for="offer">Aanbod</label>
+                                <input type="text" id="offer" placeholder="Betaalbare performance hatch" required>
+                            </div>
+                            <div>
+                                <label for="transmission">Transmissie</label>
+                                <input type="text" id="transmission" placeholder="Automaat" required>
+                            </div>
+                            <div>
+                                <label for="fuel">Brandstof</label>
+                                <input type="text" id="fuel" placeholder="Benzine" required>
+                            </div>
+                            <div>
+                                <label for="drivetrain">Aandrijving</label>
+                                <input type="text" id="drivetrain" placeholder="FWD / RWD / AWD" required>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="admin-form-section full-width">
+                        <h3>Media & beschrijving</h3>
+                        <div class="admin-form-grid">
+                            <div class="full-width">
+                                <label for="image">Afbeelding</label>
+                                <input type="text" id="image" placeholder="assets/images/hero.png" required>
+                            </div>
+                            <div class="full-width">
+                                <label for="description">Beschrijving</label>
+                                <textarea id="description" rows="5" placeholder="Beschrijf de auto, de doelgroep en de uitstraling." required></textarea>
+                            </div>
+                        </div>
+                    </section>
+
+                    <div class="admin-form-footer full-width">
+                        <p class="form-note">Tip: gebruik een bestaande asset uit de map of een online afbeelding-URL.</p>
+                        <div class="admin-form-actions">
+                            <button type="submit" class="btn btn-primary" id="saveCarButton">Auto opslaan</button>
+                            <button type="button" class="btn btn-secondary" id="resetFormButton">Formulier wissen</button>
+                            <button type="button" class="btn btn-secondary" id="resetDemoButton">Demo voorraad herstellen</button>
+                        </div>
+                    </div>
+                </form>
+            </section>
+
+            <section class="admin-side">
+                <div class="admin-side-header">
+                    <div>
+                        <p class="section-kicker">Live overzicht</p>
+                        <h2>Huidige voorraad</h2>
+                    </div>
+                    <p class="form-note">Hier zie je wat nu op de site staat. Bewerken en verwijderen werkt direct in de browser.</p>
+                </div>
+                <div id="adminList" class="admin-list"></div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo"><span class="text-gradient">DL</span>CR.</a>
+                    <p style="margin-top: 1rem;">DLCR verbindt betaalbare instapauto's met high-end exotics, altijd met een cleane presentatie.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Snelle Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="inventory.html">Aanbod</a></li>
+                        <li><a href="tuning.html">Tuning & Upgrades</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:info@dlcr.nl"><i class="fas fa-envelope"></i> info@dlcr.nl</a></li>
+                        <li><a href="tel:+31612345678"><i class="fas fa-phone"></i> +31 (0)6 1234 5678</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> Performance Highway 8, NL</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 DLCR. Alle rechten voorbehouden.
+            </div>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

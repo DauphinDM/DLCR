@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aanbod | DLCR</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="scrolled">
+        <div class="container nav-container">
+            <a href="index.html" class="logo"><span class="text-gradient">DL</span>CR.</a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="inventory.html" class="active">Aanbod</a></li>
+                <li><a href="tuning.html">Tuning</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <p class="section-kicker">Aanbod</p>
+            <h1 class="text-gradient">Van Ford tot Ferrari</h1>
+            <p>Een mix van betaalbare mooie auto's, sterke performance modellen en exclusieve exotics voor klanten met uiteenlopende budgetten.</p>
+        </div>
+    </header>
+
+    <section class="container inventory-section">
+        <div class="inventory-toolbar">
+            <div>
+                <p class="section-kicker">Voorraad</p>
+                <h2 class="section-title">Actuele selectie</h2>
+                <p id="inventoryCount" class="inventory-count">Laden...</p>
+            </div>
+            <a href="admin.html" class="btn btn-secondary">Open admin dashboard</a>
+        </div>
+
+        <div id="inventoryGrid" class="inventory-grid"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo"><span class="text-gradient">DL</span>CR.</a>
+                    <p style="margin-top: 1rem;">DLCR verbindt betaalbare instapauto's met high-end exotics, altijd met een cleane presentatie.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Snelle Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="inventory.html">Aanbod</a></li>
+                        <li><a href="tuning.html">Tuning & Upgrades</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:info@dlcr.nl"><i class="fas fa-envelope"></i> info@dlcr.nl</a></li>
+                        <li><a href="tel:+31612345678"><i class="fas fa-phone"></i> +31 (0)6 1234 5678</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> Performance Highway 8, NL</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 DLCR. Alle rechten voorbehouden.
+            </div>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

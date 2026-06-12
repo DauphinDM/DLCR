@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | DLCR</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="scrolled">
+        <div class="container nav-container">
+            <a href="index.html" class="logo"><span class="text-gradient">DL</span>CR.</a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="inventory.html">Aanbod</a></li>
+                <li><a href="tuning.html">Tuning</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <p class="section-kicker">Contact</p>
+            <h1 class="text-gradient">Neem contact op</h1>
+            <p>Vragen over een auto, tuning of verkoop? Stuur ons je plannen en we reageren gericht.</p>
+        </div>
+    </header>
+
+    <section class="container contact-section">
+        <div class="contact-info">
+            <h3>Bereikbaarheid</h3>
+            <p>Bij DLCR houden we het graag direct en professioneel. Deel je vraag, dan denken we mee over de beste aanpak.</p>
+            
+            <div class="info-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                    <strong>Adres</strong>
+                    <p>Performance Highway 8<br>1234 AB, Nederland</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-phone"></i>
+                <div>
+                    <strong>Telefoon</strong>
+                    <p>+31 (0)6 1234 5678</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                    <strong>Email</strong>
+                    <p>info@dlcr.nl</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-clock"></i>
+                <div>
+                    <strong>Openingstijden</strong>
+                    <p>Ma - Vr: 09:00 - 18:00<br>Za: 10:00 - 16:00</p>
+                </div>
+            </div>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+            <div class="form-group">
+                <label for="name">Naam *</label>
+                <input type="text" id="name" required placeholder="Jouw naam">
+            </div>
+            <div class="form-group">
+                <label for="email">E-mailadres *</label>
+                <input type="email" id="email" required placeholder="jouw@email.nl">
+            </div>
+            <div class="form-group">
+                <label for="subject">Onderwerp</label>
+                <select id="subject">
+                    <option value="aanbod">Vraag over het aanbod</option>
+                    <option value="tuning">Tuning & Upgrades</option>
+                    <option value="verkoop">Ik wil mijn auto verkopen</option>
+                    <option value="anders">Anders</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="message">Bericht *</label>
+                <textarea id="message" rows="5" required placeholder="Wat kunnen we voor je betekenen?"></textarea>
+            </div>
+            <button type="submit" class="btn btn-secondary" style="width: 100%;">Bericht versturen <i class="fas fa-paper-plane" style="margin-left: 5px;"></i></button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo"><span class="text-gradient">DL</span>CR.</a>
+                    <p style="margin-top: 1rem;">DLCR verbindt betaalbare instapauto's met high-end exotics, altijd met een cleane presentatie.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Snelle Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="inventory.html">Aanbod</a></li>
+                        <li><a href="tuning.html">Tuning & Upgrades</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:info@dlcr.nl"><i class="fas fa-envelope"></i> info@dlcr.nl</a></li>
+                        <li><a href="tel:+31612345678"><i class="fas fa-phone"></i> +31 (0)6 1234 5678</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> Performance Highway 8, NL</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 DLCR. Alle rechten voorbehouden.
+            </div>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Auto-select subject based on URL params
+        const urlParams = new URLSearchParams(window.location.search);
+        const car = urlParams.get('car');
+        if(car) {
+            const subjectSelect = document.getElementById('subject');
+            subjectSelect.value = 'aanbod';
+            document.getElementById('message').value = "Ik ben geïnteresseerd in de " + car.replace(/_/g, ' ') + ". Kunnen jullie mij meer informatie geven?";
+        }
+    </script>
+</body>
+</html>
